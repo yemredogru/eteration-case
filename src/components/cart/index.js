@@ -1,42 +1,58 @@
-import React, { useContext, useState,useEffect } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import CartContext from '../../context/cart';
 import './Cart.css'
 import { Button } from '@mui/material';
 
 
 function Cart() {
-    const Cart = useContext(CartContext);
-    const products = Cart.state;
+  const Cart = useContext(CartContext);
+  const products = Cart.state;
   const initialCart = products;
 
   const [cartItems, setCartItems] = useState(initialCart);
 
-  useEffect(()=>{setCartItems(Cart.state)},[Cart.state])
+  useEffect(() => { setCartItems(Cart.state) }, [Cart.state])
   return (
     <div>
-        <div className="cart-container">
-      {cartItems.map((item) => (
-        <div className='col-md-12' style={{display:'flex',flexDirection:'row'}}>
-            <div className="col-md-6">
-            <p style={{fontSize:'16px'}}>{item.name}</p>
-            <p>{item.price}</p>
+      <div className="cart-container">
+        {cartItems.map((item) => (
+          <div className='col-md-12 cart-first-container' >
+            <div className="col-md-6 first-div">
+              <p className='name-feature'>{item.name}</p>
+              <p>{item.price}</p>
             </div>
-            <div style={{display:'flex',flexDirection:'row'}} className="col-md-6"><Button style={{height:'25px',width:'25px',minWidth:'25px'}} onClick={()=>{Cart.updateQty(item,item.qty-1)}} variant="contained" size="small">
-          -
-        </Button><p style={{color:'blue'}}>{item.qty}</p>
-        <Button onClick={()=>{Cart.addToCart(item,1)}} style={{height:'25px',width:'25px',minWidth:'25px'}} variant="contained" size="small">
-          +
-        </Button></div>
-        </div>
-      ))}
-      
-    </div>
-    <div className="col-md-6">
-    <p>Total Price:{Cart.cartTotal}</p>
-    <Button style={{maxHeight:'25px'}} variant="contained" size="large">
+            <div className="col-md-6 second-div" style={{justifyContent:'end'}}>
+              <Button
+                className='button-main'
+                onClick={() => { Cart.updateQty(item, item.qty - 1) }}
+                variant="outlined"
+                size="small">
+                -
+              </Button>
+              <p style={{ color: 'blue' }}>{item.qty}</p>
+              <Button
+                onClick={() => { Cart.addToCart(item, 1) }}
+                className='button-main'
+                sx={{width:"25px"}}
+                variant="outlined" 
+                size="small"
+                >
+                +
+              </Button>
+              </div>
+          </div>
+        ))}
+
+      </div>
+      <div className="col-md-6">
+        <p>Total Price:{Cart.cartTotal} ₺</p>
+        <Button
+          style={{ maxHeight: '25px' }}
+          variant="contained"
+          size="large">
           Checkout
         </Button>
-        </div>
+      </div>
     </div>
   );
 }

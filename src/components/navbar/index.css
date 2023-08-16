@@ -1,3 +1,29 @@
 .main{
     background-color: #2A59FE;
 }
+.main-row{
+    display: flex;
+    align-items: center;
+}
+.first-box{
+    flex:1;
+    display: flex;
+}
+.second-box{
+    flex:1!important;
+    display: flex;
+    justify-content: flex-start;
+}
+.title{
+    color:black;
+    text-decoration: none;
+    color: white;
+}
+.bg-color-white{
+    background-color: white;
+}
+
+.header{
+    background-color: #2A59FE;
+    color:white
+}

@@ -1,26 +1,17 @@
 import React, { useEffect, useState, useContext } from "react";
 import {
   MDBContainer,
-  MDBRow,
-  MDBCol,
-  MDBCard,
-  MDBCardBody,
-  MDBCardImage,
-  MDBCardTitle,
-  MDBIcon,
-  MDBBtn,
+  MDBRow
 } from "mdb-react-ui-kit";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Container, Row } from "reactstrap";
 import api from "../services/productService";
-import { Button } from "@mui/material";
-
 import CartContext from "../context/cart";
 import Cart from "../components/cart";
 import SortProducts from "../components/Filters/sort";
-import CheckboxFilters from "../components/Filters/brand-filter";
-import CheckboxModelFilters from "../components/Filters/model-filter";
-import ProductCard from "../components/productCard";
+import CheckboxFilters from "../components/Filters/brandFilter";
+import CheckboxModelFilters from "../components/Filters/modelFilter";
+import ProductCard from '../components/product/productCard'
 import SearchContext from "../context/search";
 
 
@@ -110,7 +101,7 @@ function ProductList() {
       </Row>
     </Container>
   );
-  
+
 }
 
 export default ProductList;

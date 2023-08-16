@@ -1,13 +1,13 @@
 // src/App.js
 import React from 'react';
-import ProductList from './pages/product-list';
+import ProductList from './pages/productList';
 import MenuAppBar from './components/navbar';
 import CartContextProvider from './context/cart/CartContext'
 import SearchContext from './context/search/searchContext';
 import Cart from './components/cart';
 import './index.css'
 import {Routes,Route} from 'react-router-dom'
-import ProductDetails from './pages/product-details';
+import ProductDetails from './pages/productDetails';
 
 function HomePage(){
   return(

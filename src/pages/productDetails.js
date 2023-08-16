@@ -20,7 +20,7 @@ function ProductDetails() {
                 <Col xs="12" md="10" style={{ marginTop: "50px" }}>
                     <ProductCard item={item} setItem={setItem} />
                 </Col>
-                <Col  xs="12" md="2">
+                <Col xs="12" md="2">
                     <Cart />
                 </Col>
             </Row>

@@ -1,0 +1,19 @@
+.list-container{
+    width: 100%;
+    max-width: 360px;
+    background-color: transparent;
+    position: relative!important;
+    overflow: auto;
+    max-height: 200px;
+    margin-bottom: 20px!important;
+    background-color: white;
+}
+.list-container ul{
+    padding: 0;
+}
+
+.form-label{
+    width: 80%;
+    font-size: 12px;
+    padding-left: 5px;
+}
