@@ -1,14 +1,13 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import CheckboxFilters from './brandFilter'; // Update the import path accordingly
+import CheckboxFilters from './brandFilter';
 
 describe('CheckboxFilters', () => {
-  const mockOptions = 'brand'; // Replace with your actual options
+  const mockOptions = 'brand';
   const mockUpdateBrands = jest.fn();
   const mockProducts = {
     allData: [
       { brand: 'Brand 1' }
-      // ... mock products
     ],
   };
   const mockUpdateProducts = jest.fn();
@@ -31,11 +30,11 @@ describe('CheckboxFilters', () => {
     const checkboxLabels = screen.getAllByRole('checkbox');
     expect(checkboxLabels).toHaveLength(mockProducts.allData.length);
 
-    // Simulate clicking on a checkbox
+
     fireEvent.click(checkboxLabels[0]);
     expect(mockUpdateBrands).toHaveBeenCalledWith(['Brand 1']);
 
-    // Simulate unchecking the checkbox
+
     fireEvent.click(checkboxLabels[0]);
     expect(mockUpdateBrands).toHaveBeenCalledWith([]);
 
@@ -52,7 +51,7 @@ describe('CheckboxFilters', () => {
       />
     );
 
-    // Simulate clicking on a checkbox
+    
     fireEvent.click(screen.getAllByRole('checkbox')[0]);
     expect(mockUpdateBrands).toHaveBeenCalledTimes(1);
     expect(mockUpdateProducts).toHaveBeenCalledTimes(1);

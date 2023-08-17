@@ -19,34 +19,33 @@ describe('SortProducts', () => {
       />
     );
 
-    // Simulate selecting "Old to New" option
+    // Old to New
     fireEvent.click(screen.getByLabelText('Old to New'));
     expect(mockUpdateProducts).toHaveBeenCalledWith(expect.arrayContaining([
       { createdAt: '2023-07-01', price: 15 },
       { createdAt: '2023-08-01', price: 20 },
     ]));
 
-    // Simulate selecting "New to Old" option
+    // New to Old
     fireEvent.click(screen.getByLabelText('New to Old'));
     expect(mockUpdateProducts).toHaveBeenCalledWith(expect.arrayContaining([
       { createdAt: '2023-08-01', price: 20 },
       { createdAt: '2023-07-01', price: 15 },
     ]));
 
-    // Simulate selecting "Price High to Low" option
+    // Price High to Low
     fireEvent.click(screen.getByLabelText('Price High to Low'));
     expect(mockUpdateProducts).toHaveBeenCalledWith(expect.arrayContaining([
       { createdAt: '2023-08-01', price: 20 },
       { createdAt: '2023-07-01', price: 15 },
     ]));
 
-    // Simulate selecting "Price Low to High" option
+    // Price Low to High
     fireEvent.click(screen.getByLabelText('Price Low to High'));
     expect(mockUpdateProducts).toHaveBeenCalledWith(expect.arrayContaining([
       { createdAt: '2023-07-01', price: 15 },
       { createdAt: '2023-08-01', price: 20 },
     ]));
 
-    // ... add more assertions as needed
   });
 });

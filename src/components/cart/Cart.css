@@ -16,7 +16,9 @@
     margin: 8px;
     border: 1px solid #ccc;
   }
-  
+  .second-div{
+    display: flex;
+  }
   .product-info {
     flex: 1;
     margin-right: 16px;
@@ -51,6 +53,11 @@
     height: 25px!important;
     width: 25px!important;
     max-width: 25px!important;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: 1px solid gray;
+    border-radius: 5px;
     
   }
   
@@ -63,6 +70,13 @@
     display: flex;
     justify-content:center;
     align-items: center;
+  }
+  .quantity-info{
+    color: white;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    height: 25px;
   }
 
   @media (max-width: 768px) {
@@ -80,7 +94,7 @@
       width:120px
     }
     .second-div{
-      margin-left:50px
+      margin-left:50px;
     }
     
 }

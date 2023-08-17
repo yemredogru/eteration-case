@@ -22,15 +22,17 @@ function Cart() {
               <p>{item.price}</p>
             </div>
             <div className="col-md-6 second-div" style={{justifyContent:'end'}}>
-              <Button
+              <button
+              id="button-minus"
                 className='button-main'
                 onClick={() => { Cart.updateQty(item, item.qty - 1) }}
                 variant="outlined"
                 size="small">
                 -
-              </Button>
-              <p style={{ color: 'blue' }}>{item.qty}</p>
-              <Button
+              </button>
+              <p className="quantity-info">{item.qty}</p>
+              <button
+              id='button-plus'
                 onClick={() => { Cart.addToCart(item, 1) }}
                 className='button-main'
                 sx={{width:"25px"}}
@@ -38,7 +40,7 @@ function Cart() {
                 size="small"
                 >
                 +
-              </Button>
+              </button>
               </div>
           </div>
         ))}

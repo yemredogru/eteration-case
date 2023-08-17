@@ -26,6 +26,7 @@ function DetailPage(){
   return(
     <div className='app'>
      <CartContextProvider>
+      
         <MenuAppBar />
       <ProductDetails />
       
