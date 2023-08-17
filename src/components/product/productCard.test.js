@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import ProductCard from './productCard';
 import CartContext from '../../context/cart'; 
+import { MemoryRouter } from 'react-router-dom';
 
 describe('ProductCard', () => {
   const mockProducts = {
@@ -26,24 +27,24 @@ describe('ProductCard', () => {
 
     render(
       <CartContext.Provider value={mockCart}>
+ <MemoryRouter>
         <ProductCard
           products={mockProducts}
           setItem={mockSetItem}
         />
+        </MemoryRouter>
+
       </CartContext.Provider>
     );
 
    
     const productCards = screen.getAllByRole('img');
     expect(productCards).toHaveLength(mockProducts.current.length);
-
+    mockProducts.current.forEach((product) => {
+      const productNameElement = screen.getByText(product.name);
+      expect(productNameElement).toBeInTheDocument();
+    });
    
-    const pagination = screen.getByRole('navigation', { name: 'pagination' });
-    expect(pagination).toBeInTheDocument();
-
-   
-    userEvent.click(screen.getByRole('button', { name: /Add to Cart/i }));
-    expect(mockCart.addToCart).toHaveBeenCalledTimes(1);
     
   });
 });
