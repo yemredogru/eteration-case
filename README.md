@@ -45,6 +45,9 @@ Testleri çalıştırın
 
 ![Uygulama Ekran Görüntüsü](https://gitlab.com/yemredogru/eteration-frontend-case/-/raw/main/assets/img2.png?ref_type=heads)
 
+![Uygulama Ekran Görüntüsü](https://gitlab.com/yemredogru/eteration-frontend-case/-/raw/main/assets/cart.png?ref_type=heads)
+
+
 
   
 
@@ -93,5 +96,7 @@ Run the tests
 ![Uygulama Ekran Görüntüsü](https://gitlab.com/yemredogru/eteration-frontend-case/-/raw/main/assets/img1.png?ref_type=heads)
 
 ![Uygulama Ekran Görüntüsü](https://gitlab.com/yemredogru/eteration-frontend-case/-/raw/main/assets/img2.png?ref_type=heads)
+
+![Uygulama Ekran Görüntüsü](https://gitlab.com/yemredogru/eteration-frontend-case/-/raw/main/assets/cart.png?ref_type=heads)
 
   
