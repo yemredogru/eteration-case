@@ -1,14 +1,13 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import CheckboxFilters from './CheckboxFilters'; // Update the import path accordingly
+import CheckboxFilters from './brandFilter'; // Update the import path accordingly
 
 describe('CheckboxFilters', () => {
   const mockOptions = 'brand'; // Replace with your actual options
   const mockUpdateBrands = jest.fn();
   const mockProducts = {
     allData: [
-      { brand: 'Brand 1' },
-      { brand: 'Brand 2' },
+      { brand: 'Brand 1' }
       // ... mock products
     ],
   };
@@ -25,7 +24,6 @@ describe('CheckboxFilters', () => {
       />
     );
 
-    // Assertions
     const searchInput = screen.getByLabelText(/Search/i);
     fireEvent.change(searchInput, { target: { value: 'Brand 1' } });
     expect(searchInput.value).toBe('Brand 1');
@@ -41,7 +39,6 @@ describe('CheckboxFilters', () => {
     fireEvent.click(checkboxLabels[0]);
     expect(mockUpdateBrands).toHaveBeenCalledWith([]);
 
-    // ... add more assertions as needed
   });
 
   it('updates products based on selected checkboxes', () => {

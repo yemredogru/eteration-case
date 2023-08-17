@@ -17,7 +17,7 @@ import SearchContext from "../context/search";
 
 function ProductList() {
   const [loading, setLoading] = useState(true);
-  const [products, setProducts] = useState({ show: [], allData: [], current: [] });
+  const [products, setProducts] = useState({ show: [], allData: [], current: [] }); //show ekranda gösterilen ürünleri belirtiyor, allData tüm ürünleri belirtiyor, current ise filtreden geçen ürünleri gösteriyor
   const [selectedBrands, setSelectedBrands] = useState([])
   const [selectedModels, setSelectedModels] = useState([]);
 

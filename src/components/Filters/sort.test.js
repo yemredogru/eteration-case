@@ -1,13 +1,12 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import SortProducts from './SortProducts'; // Update the import path accordingly
+import SortProducts from './sort';
 
 describe('SortProducts', () => {
   const mockProducts = {
     current: [
       { createdAt: '2023-08-01', price: 20 },
       { createdAt: '2023-07-01', price: 15 },
-      // ... mock products
     ],
   };
   const mockUpdateProducts = jest.fn();

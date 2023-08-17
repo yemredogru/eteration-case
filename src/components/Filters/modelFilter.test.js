@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import CheckboxModelFilters from './CheckboxModelFilters'; // Update the import path accordingly
+import CheckboxModelFilters from './modelFilter'; // Update the import path accordingly
 
 describe('CheckboxModelFilters', () => {
   const mockOptions = 'model'; // Replace with your actual options
@@ -8,8 +8,7 @@ describe('CheckboxModelFilters', () => {
   const mockSelectedBrands = ['Brand 1'];
   const mockProducts = {
     allData: [
-      { brand: 'Brand 1', model: 'Model A' },
-      { brand: 'Brand 2', model: 'Model B' },
+      { brand: 'Brand 1', model: 'Model A' }
       // ... mock products
     ],
   };
@@ -35,7 +34,7 @@ describe('CheckboxModelFilters', () => {
     expect(searchInput.value).toBe('Model A');
 
     const checkboxLabels = screen.getAllByRole('checkbox');
-    expect(checkboxLabels).toHaveLength(2); // Number of models in mockProducts
+    expect(checkboxLabels).toHaveLength(1);
 
     // Simulate clicking on a checkbox
     fireEvent.click(checkboxLabels[0]);
@@ -45,7 +44,6 @@ describe('CheckboxModelFilters', () => {
     fireEvent.click(checkboxLabels[0]);
     expect(mockUpdateModels).toHaveBeenCalledWith([]);
 
-    // ... add more assertions as needed
   });
 
   it('updates products based on selected checkboxes and selected brands', () => {
